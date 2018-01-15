@@ -1,14 +1,14 @@
 #coding:utf-8
 import sys
 import keras
-
-VECTOR_DIR = 'category_4.model'
+import pydot
+VECTOR_DIR = 'category_7_3.model'
 
 MAX_SEQUENCE_LENGTH = 100
 EMBEDDING_DIM = 250
 VALIDATION_SPLIT = 0.16
 TEST_SPLIT = 0.2
-rootdir = 'D:/Topic/code/segment/data/lstm_train'
+rootdir = 'D:/Topic/code/segment/data/lstm_train/7_2'
 
 print ('(1) load texts...')
 train_texts = open(rootdir + '/train.txt','r',encoding='utf-8').read().split('\n')
@@ -81,8 +81,10 @@ from keras.models import Sequential
 
 model = Sequential()
 model.add(embedding_layer)
-model.add(LSTM(200, dropout=0.2, recurrent_dropout=0.2))
+model.add(LSTM(200, dropout=0.3, recurrent_dropout=0.1 , return_sequences=True))
+#model.add(LSTM(200, return_sequences=True))
 model.add(Dropout(0.2))
+model.add(Flatten())
 model.add(Dense(labels.shape[1], activation='softmax'))
 model.summary()
 #plot_model(model, to_file='model.png',show_shapes=True)
@@ -97,7 +99,7 @@ model.save('word_vector_lstm.h5')
 print ('(6) testing model...')
 print (model.evaluate(x_test, y_test))
 
-        
+       
 
 
 
