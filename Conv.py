@@ -152,8 +152,8 @@ model = Sequential()
 #model.add(Reshape(input_shape +(1, ),input_shape=input_shape))
 model.add(LSTM(50, return_sequences=True,dropout=0.5,
                input_shape=(timesteps, data_dim)))
-model.add(Conv1D(128,
-             6,
+model.add(Conv1D(64,
+             5,
              padding='valid',
              activation='relu',
              strides=1
