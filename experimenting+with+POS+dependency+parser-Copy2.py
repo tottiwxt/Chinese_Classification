@@ -225,7 +225,7 @@ for text , label in articles_test:
     x_data.append(sentVecs)
     y_data.append(int(label))
 
-
+###
 
 """
 print ('out: ')
