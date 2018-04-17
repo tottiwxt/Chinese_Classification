@@ -118,13 +118,13 @@ model.add(LSTM(30, return_sequences=True,dropout=0.5,
                input_shape=(timesteps, data_dim)))
             
 model.add(Conv1D(32,
-             3,
+             4,
              padding='valid',
              activation='relu',
              strides=1
              #input_shape = ( timesteps, data_dim )
              ))
-model.add(MaxPooling1D(pool_size=3))
+model.add(MaxPooling1D(pool_size=4))
 #model.add(LSTM(50, return_sequences=True,dropout=0.5,
                #input_shape=(timesteps, data_dim)))  # returns a sequence of vectors of dimension 32
 #model.add(Dropout(0.2))
