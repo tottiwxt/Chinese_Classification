@@ -69,34 +69,4 @@ if __name__ == '__main__':
           finput.close()
           logger.info("Finished Saved " + str(i) + " articles")
   foutput.close() 
-  """for file in files :
-      finput = open (os.path.join(root,file),"r",encoding='utf-8')
-      for line in finput:
-        line = re.sub(r,' ',line.strip())
-        #line_seg = removeStopWords(jieba.cut(line))
-        line_seg = removeStopWords(line)
-        #foutput.write(space.join(line_seg))
-        foutput.write(line_seg)
-        i = i + 1
-        if (i % 1000 == 0):
-          logger.info("Saved " + str(i) + " articles_seg")
-      foutput.write('\n')
-      finput.close()
-      logger.info("Finished Saved " + str(i) + " articles")
-  foutput.close()   
-
   
-  """
-  """
-  for line in finput:
-    line = re.sub(r,' ',line.strip())
-    line_seg = jieba.cut(line)
-    foutput.write(space.join(line_seg))
-    i = i + 1
-    if (i % 1000 == 0):
-      logger.info("Saved " + str(i) + " articles_seg")
-  foutput.write('\n')
-  finput.close()
-  foutput.close()
-  logger.info("Finished Saved " + str(i) + " articles")
-  """
