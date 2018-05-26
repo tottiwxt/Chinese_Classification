@@ -1,5 +1,4 @@
 
-"""
 
 # #### Encode one hot vectors for the classes
 
@@ -191,6 +190,7 @@ model.compile(loss='categorical_crossentropy',
               metrics=['accuracy'])
 
 model.fit(x_train, y_train, epochs=5, validation_data=(x_val, y_val))
+
 
 
 # In[78]:
