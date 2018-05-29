@@ -50,19 +50,19 @@ def dot_product(doc1, doc2):
   return 4 - np.dot(doc1, doc2);
 
 def category(num):
-  if num == 0
+  if num == 0：
     return "economy"
-  elif num == 1
+  elif num == '1'：
     return "sports"
-  elif num == 2
+  elif num == '2'：
     return "education"
-  elif num == 3
+  elif num == '3'：
     return "politic"
-  elif num == 4
+  elif num == '4'：
     return "fashion"
-  elif num == 5
+  elif num == '5'：
     return "PC games"
-  elif num == 6
+  elif num == '6'：
     return "technology"
 
 def main():
@@ -93,7 +93,7 @@ def main():
       if i >= j: continue
       data = [d for di, d in enumerate(docs) if labels[di] == i or labels[di] == j]
       data_labels = [l for l in labels if l == i or l == j]
-      print("Score between", category1, "and", category2, "=", evalSvm(data, data_labels))
+      print("Score between", category(category1), "and", category(category2), "=", evalSvm(data, data_labels))
   categories = [categories.index(c) for c in categories]
 
   #print(sklearn.metrics.silhouette_score(docs, labels, metric=dot_product))
