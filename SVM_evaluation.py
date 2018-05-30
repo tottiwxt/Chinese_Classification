@@ -50,7 +50,7 @@ def dot_product(doc1, doc2):
   return 4 - np.dot(doc1, doc2);
 
 def category(num):
-  if num == 0：
+  if num == '0'：
     return "economy"
   elif num == '1'：
     return "sports"
